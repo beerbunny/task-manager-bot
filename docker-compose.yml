@@ -5,8 +5,19 @@ services:
     env_file:
       - .env
     depends_on:
-      - postgres
+      migrate:
+        condition: service_completed_successfully
     restart: unless-stopped
+
+  migrate:
+    image: ghcr.io/beerbunny/task-manager-bot:latest
+    container_name: task_manager_migrate
+    env_file:
+      - .env
+    command: alembic upgrade head
+    depends_on:
+      - postgres
+    restart: "no"
 
   postgres:
     image: postgres:16
