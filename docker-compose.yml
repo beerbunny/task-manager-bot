@@ -2,8 +2,20 @@ services:
   bot:
     image: ghcr.io/beerbunny/task-manager-bot:latest
     container_name: task_manager_bot
-
     env_file:
       - .env
-
+    depends_on:
+      - postgres
     restart: unless-stopped
+
+  postgres:
+    image: postgres:16
+    container_name: task_manager_postgres
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
