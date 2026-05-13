@@ -32,7 +32,7 @@ logs/
 .mypy_cache/
 
 # Alembic
-alembic.ini
+# alembic.ini
 
 # SQLite
 *.sqlite3
