@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# OS мусор
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# pytest
+.pytest_cache/
+
+# Ruff
+.ruff_cache/
+
+# Mypy
+.mypy_cache/
+
+# Alembic
+alembic.ini
+
+# SQLite
+*.sqlite3
+*.db
+
+# Docker
+docker-data/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Build
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/
