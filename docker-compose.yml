@@ -1,7 +1,9 @@
 services:
   bot:
-    build: .
+    image: ghcr.io/beerbunny/task-manager-bot:latest
     container_name: task_manager_bot
+
     env_file:
       - .env
+
     restart: unless-stopped
