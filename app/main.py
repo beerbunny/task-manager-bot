@@ -1,19 +1,15 @@
 import asyncio
 
 from aiogram import Bot, Dispatcher
-from aiogram.filters import CommandStart
-from aiogram.types import Message
 
+from app.bot.handlers.start import router
 from app.core.config import settings
 
 
 bot = Bot(token=settings.BOT_TOKEN)
 dp = Dispatcher()
 
-
-@dp.message(CommandStart())
-async def start_handler(message: Message):
-    await message.answer("Task Manager запущен ✅")
+dp.include_router(router)
 
 
 async def main():
